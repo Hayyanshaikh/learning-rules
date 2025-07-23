@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt Builder</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+      table th,
+      table td {
+        white-space: nowrap;
+      }
+      .active {
+        background-color: #3b82f6;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="flex h-screen bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r shadow-lg">
+      <div class="p-4 font-bold text-xl border-b flex items-center space-x-2">
+        <i data-feather="book-open"></i>
+        <span>Prompt Builder</span>
+      </div>
+      <ul id="sidebar" class="p-4 space-y-2">
+        <li>
+          <button
+            class="w-full text-left px-4 py-2 bg-blue-100 rounded flex items-center space-x-2"
+            onclick="showPage('promptRules', this)"
+          >
+            <i data-feather="list"></i>
+            <span>Prompt Rules</span>
+          </button>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-8 overflow-y-auto">
+      <div id="promptRules" class="page">
+        <h1 class="text-2xl font-bold mb-6 flex items-center space-x-2">
+          <i data-feather="check-square"></i>
+          <span>Prompt Rules</span>
+        </h1>
+        <div class="overflow-x-auto bg-white p-4 rounded shadow">
+          <table class="min-w-full table-auto">
+            <thead class="bg-gray-200">
+              <tr>
+                <th class="px-4 py-2 text-left">Rule No.</th>
+                <th class="px-4 py-2 text-left">Rule Name</th>
+                <th class="px-4 py-2 text-left">Mandatory/Optional</th>
+                <th class="px-4 py-2 text-left">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t">
+                <td class="px-4 py-2">1</td>
+                <td class="px-4 py-2">Clear Objective</td>
+                <td class="px-4 py-2 flex items-center space-x-1">
+                  <i
+                    data-feather="check-circle"
+                    class="text-green-500 w-4 h-4"
+                  ></i
+                  ><span>Mandatory</span>
+                </td>
+                <td class="px-4 py-2">Hamesha chahiye</td>
+              </tr>
+              <tr class="border-t">
+                <td class="px-4 py-2">2</td>
+                <td class="px-4 py-2">Specific Instructions</td>
+                <td class="px-4 py-2 flex items-center space-x-1">
+                  <i
+                    data-feather="check-circle"
+                    class="text-green-500 w-4 h-4"
+                  ></i
+                  ><span>Mostly Mandatory</span>
+                </td>
+                <td class="px-4 py-2">Zyada clarity to better result</td>
+              </tr>
+              <tr class="border-t">
+                <td class="px-4 py-2">3</td>
+                <td class="px-4 py-2">Expected Output Format</td>
+                <td class="px-4 py-2 flex items-center space-x-1">
+                  <i
+                    data-feather="alert-triangle"
+                    class="text-yellow-500 w-4 h-4"
+                  ></i
+                  ><span>Optional</span>
+                </td>
+                <td class="px-4 py-2">Sirf tab zaruri jab custom format ho</td>
+              </tr>
+              <tr class="border-t">
+                <td class="px-4 py-2">4</td>
+                <td class="px-4 py-2">Tone/Language</td>
+                <td class="px-4 py-2 flex items-center space-x-1">
+                  <i
+                    data-feather="alert-triangle"
+                    class="text-yellow-500 w-4 h-4"
+                  ></i
+                  ><span>Optional</span>
+                </td>
+                <td class="px-4 py-2">Jab customized tone chahiye</td>
+              </tr>
+              <tr class="border-t">
+                <td class="px-4 py-2">5</td>
+                <td class="px-4 py-2">Context</td>
+                <td class="px-4 py-2 flex items-center space-x-1">
+                  <i
+                    data-feather="alert-triangle"
+                    class="text-yellow-500 w-4 h-4"
+                  ></i
+                  ><span>Optional</span>
+                </td>
+                <td class="px-4 py-2">Linked prompt ho to zaruri</td>
+              </tr>
+              <tr class="border-t">
+                <td class="px-4 py-2">6</td>
+                <td class="px-4 py-2">Constraints</td>
+                <td class="px-4 py-2 flex items-center space-x-1">
+                  <i
+                    data-feather="alert-triangle"
+                    class="text-yellow-500 w-4 h-4"
+                  ></i
+                  ><span>Optional</span>
+                </td>
+                <td class="px-4 py-2">Sirf jab koi limit ho</td>
+              </tr>
+              <tr class="border-t">
+                <td class="px-4 py-2">7</td>
+                <td class="px-4 py-2">One Task per Prompt</td>
+                <td class="px-4 py-2 flex items-center space-x-1">
+                  <i
+                    data-feather="check-circle"
+                    class="text-green-500 w-4 h-4"
+                  ></i
+                  ><span>Recommended</span>
+                </td>
+                <td class="px-4 py-2">Accuracy aur clarity ke liye</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function showPage(pageId, btn) {
+        const pages = document.querySelectorAll('.page');
+        pages.forEach((page) => page.classList.add('hidden'));
+        document.getElementById(pageId).classList.remove('hidden');
+
+        const buttons = document.querySelectorAll('#sidebar button');
+        buttons.forEach((b) => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+      }
+
+      window.onload = function () {
+        const defaultBtn = document.querySelector('#sidebar button');
+        defaultBtn.classList.add('active');
+        showPage('promptRules', defaultBtn);
+        feather.replace();
+      };
+    </script>
+  </body>
+</html>
